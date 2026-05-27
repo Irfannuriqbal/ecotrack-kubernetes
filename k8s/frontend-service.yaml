@@ -1,0 +1,20 @@
+# ClusterIP service for the static frontend.
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecotrack-frontend
+  namespace: ecotrack
+  labels:
+    app.kubernetes.io/name: ecotrack
+    app.kubernetes.io/component: frontend
+    app.kubernetes.io/part-of: ecotrack
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: ecotrack
+    app.kubernetes.io/component: frontend
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      name: http

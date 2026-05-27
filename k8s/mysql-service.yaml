@@ -1,0 +1,20 @@
+# Internal ClusterIP service for MySQL access.
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecotrack-mysql
+  namespace: ecotrack
+  labels:
+    app.kubernetes.io/name: ecotrack
+    app.kubernetes.io/component: mysql
+    app.kubernetes.io/part-of: ecotrack
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: ecotrack
+    app.kubernetes.io/component: mysql
+  ports:
+    - port: 3306
+      targetPort: 3306
+      protocol: TCP
+      name: mysql

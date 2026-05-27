@@ -1,0 +1,26 @@
+# Ingress routes browser traffic to frontend and backend services.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ecotrack-ingress
+  namespace: ecotrack
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: ecotrack.local
+      http:
+        paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: ecotrack-backend
+                port:
+                  number: 80
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: ecotrack-frontend
+                port:
+                  number: 80

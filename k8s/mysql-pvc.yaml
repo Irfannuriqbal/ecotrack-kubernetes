@@ -1,0 +1,16 @@
+# Persistent storage so MySQL data survives pod restarts.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ecotrack-mysql-pvc
+  namespace: ecotrack
+  labels:
+    app.kubernetes.io/name: ecotrack
+    app.kubernetes.io/component: mysql
+    app.kubernetes.io/part-of: ecotrack
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi

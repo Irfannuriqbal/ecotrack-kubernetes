@@ -1,0 +1,18 @@
+# Non-sensitive application configuration shared by backend pods.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ecotrack-config
+  namespace: ecotrack
+  labels:
+    app.kubernetes.io/name: ecotrack
+    app.kubernetes.io/component: config
+    app.kubernetes.io/part-of: ecotrack
+data:
+  NODE_ENV: production
+  PORT: "5000"
+  DB_HOST: ecotrack-mysql
+  DB_PORT: "3306"
+  DB_NAME: ecotrack
+  CORS_ORIGIN: http://ecotrack.local
+  VITE_API_BASE_URL: /api
