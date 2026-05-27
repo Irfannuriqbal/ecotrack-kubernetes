@@ -1,9 +1,18 @@
 node_modules
+dist
+build
 .env
-.env.*
+*.log
+
+# Docker
+docker-data
+Running
+Removed
+[0-9a-f]*
+
+# Minikube
+.minikube
+
+# OS
 .DS_Store
-.vscode
-coverage
-frontend/dist
-backend/node_modules
-frontend/node_modules
+Thumbs.db
