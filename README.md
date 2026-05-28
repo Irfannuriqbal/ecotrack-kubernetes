@@ -8,6 +8,7 @@ EcoTrack is a modern admin dashboard for monitoring waste reports. The project i
 The application is intentionally kept simple with one admin role so the focus stays on Kubernetes implementation, scaling, and deployment quality.
 
 ## Architecture Diagram
+![Architecture Diagram](Arsistektur%20Diagram%20-%20Komputasi%20Awan%20Evaluasi%203.drawio%20%282%29.png)
 
 ```mermaid
 graph TD
