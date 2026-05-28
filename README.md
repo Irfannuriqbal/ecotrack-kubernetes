@@ -10,17 +10,7 @@ The application is intentionally kept simple with one admin role so the focus st
 ## Architecture Diagram
 ![Architecture Diagram](Arsistektur%20Diagram%20-%20Komputasi%20Awan%20Evaluasi%203.drawio%20%282%29.png)
 
-```mermaid
-graph TD
-  U[Admin User] --> F[React + Vite Frontend]
-  F --> I[Ingress Controller]
-  I --> B[Node.js + Express Backend]
-  B --> M[(MySQL Database)]
-  B --> H[Health Check]
-  B --> CM[ConfigMap]
-  M --> S[Secret]
-  H --> A[HPA]
-```
+<!-- mermaid diagram removed per request -->
 
 ## Project Structure
 
